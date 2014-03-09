@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+path {
+  fill: steelblue;
+  stroke: steelblue;
+}
+
+</style>
+<body>
+<script src="d3/d3.min.js"></script>
+<script>
+
+var width = 960,
+    height = 600;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var geojson_arr = [];
+
+//
+var completed = 0;
+var nbSteps = 3;
+
+// Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
+
+d3.json("data/0.json", function(error,json) {
+  geojson_arr[0] = json.features[0].geometry;
+  if (++completed==nbSteps) {initTransition();}
+});
+
+d3.json("data/1.json", function(error,json) {
+  geojson_arr[1] = json.features[0].geometry;
+  if (++completed==nbSteps) {initTransition();}
+});
+
+d3.json("data/2.json", function(error,json) {
+  geojson_arr[2] = json.features[0].geometry;
+  if (++completed==nbSteps) {initTransition();}
+});
+
+
+var initTransition = function(){
+  var projection = d3.geo.albers()
+      .rotate([120, 0])
+      .center([0, 37.7])
+      .scale(1000);
+
+  // Transforming the coordinates into an SVG path (linear)
+  var darr = [];
+  for(var k=0; k<geojson_arr.length;k++)
+  {
+    darr[k] = "M" + geojson_arr[k].coordinates[0].map(projection).join("L") + "Z";
+  }
+
+  // Cloning the original array and initialising the 1st transition
+  var darr2 = darr.slice(0);
+  var d0 = darr2.shift();
+  var d1 = darr2.shift();
+
+  svg.append("path")
+      .attr("d", d0)
+      .call(transition, d0, d1);
+
+  function transition(path, d0, d1) {
+    path.transition()
+        // 3 seconds for the animation to play out
+        .duration(3000)
+        // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
+        .attrTween("d", pathTween(d1, 1))
+        // On transition end, proceed to the next transition
+        .each("end", function() {
+          d0 = d1;
+          if (!darr2.length)
+          {
+            darr2 = darr.slice(0);
+          }
+          d1 = darr2.shift();
+          d3.select(this).call(transition, d0, d1);
+        });
+  }
+
+  function pathTween(d1, precision) {
+    return function() {
+      var path0 = this,
+          path1 = path0.cloneNode(),
+          n0 = path0.getTotalLength(),
+          n1 = (path1.setAttribute("d", d1), path1).getTotalLength();
+
+      // Uniform sampling of distance based on specified precision.
+      var distances = [0], i = 0, dt = precision / Math.max(n0, n1);
+      while ((i += dt) < 1) distances.push(i);
+      distances.push(1);
+
+      // Compute point-interpolators at each distance.
+      var points = distances.map(function(t) {
+        var p0 = path0.getPointAtLength(t * n0),
+            p1 = path1.getPointAtLength(t * n1);
+        return d3.interpolate([p0.x, p0.y], [p1.x, p1.y]);
+      });
+
+      return function(t) {
+        return t < 1 ? "M" + points.map(function(p) { return p(t); }).join("L") : d1;
+      };
+    };
+  }
+
+} 
+
+</script>
