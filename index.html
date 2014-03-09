@@ -24,27 +24,42 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 4;
+var nbSteps = 5;
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
+// Any library to do that? Require.js?
 
+// America outline
+// Source: Natural Earth 110m
 d3.json("data/0.json", function(error,json) {
   geojson_arr[0] = json.features[0].geometry;
   if (++completed==nbSteps) {initTransition();}
 });
 
+// California outline
+// http://bl.ocks.org/mbostock/3081153
 d3.json("data/1.json", function(error,json) {
   geojson_arr[1] = json.features[0].geometry;
   if (++completed==nbSteps) {initTransition();}
 });
 
+// Simplified california outline (tolerance 1 with ogr2ogr)
 d3.json("data/2.json", function(error,json) {
   geojson_arr[2] = json.features[0].geometry;
   if (++completed==nbSteps) {initTransition();}
 });
 
+// Seedling
+// http://www.projectequator.com/wp-content/uploads/2014/01/7_istock_000005830377large_seedling.jpg
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Tree
+// Source: LS
+d3.xml("data/4.svg", "image/svg+xml", function(xml) {
+  geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
   if (++completed==nbSteps) {initTransition();}
 });
 
