@@ -10,6 +10,7 @@ path {
 </style>
 <body>
 <script src="d3/d3.min.js"></script>
+<script src="simplify-js/simplify.js"></script>
 <script>
 
 var width = 960,
@@ -24,7 +25,8 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 5;
+var nbSteps = 6;
+var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
 // Any library to do that? Require.js?
@@ -54,14 +56,26 @@ d3.json("data/2.json", function(error,json) {
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
   if (++completed==nbSteps) {initTransition();}
+  params[3]={'translate_x':960/2}
 });
 
 // Tree
-// Source: LS
+// Source: Lizzy
 d3.xml("data/4.svg", "image/svg+xml", function(xml) {
   geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
   if (++completed==nbSteps) {initTransition();}
+  params[4]={'translate_x':960/2}
 });
+
+// Bird
+// Source: Flicker 
+// http://farm1.staticflickr.com/181/453851058_def81e5b60_b.jpg
+d3.xml("data/5.svg", "image/svg+xml", function(xml) {
+  geojson_arr[5] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  if (++completed==nbSteps) {initTransition();}
+  params[5]={'translate_x':0}
+});
+
 
 var initTransition = function(){
   var projection = d3.geo.albers()
@@ -91,7 +105,7 @@ var initTransition = function(){
       });
 
       // Rewriting the SVG coordinates
-      segPathData[0].x = 960/2; // center of the SVG element
+      segPathData[0].x = params[k].translate_x; // center of the SVG element
       segPathData[0].y = 20;
 
       // Transforming to absolute coordinates
