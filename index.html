@@ -25,7 +25,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 6;
+var nbSteps = 7;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -55,16 +55,16 @@ d3.json("data/2.json", function(error,json) {
 // http://www.projectequator.com/wp-content/uploads/2014/01/7_istock_000005830377large_seedling.jpg
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[3]={'translate_x':960/2};
   if (++completed==nbSteps) {initTransition();}
-  params[3]={'translate_x':960/2}
 });
 
 // Tree
 // Source: Lizzy
 d3.xml("data/4.svg", "image/svg+xml", function(xml) {
   geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[4]={'translate_x':960/2};
   if (++completed==nbSteps) {initTransition();}
-  params[4]={'translate_x':960/2}
 });
 
 // Bird
@@ -72,10 +72,18 @@ d3.xml("data/4.svg", "image/svg+xml", function(xml) {
 // http://farm1.staticflickr.com/181/453851058_def81e5b60_b.jpg
 d3.xml("data/5.svg", "image/svg+xml", function(xml) {
   geojson_arr[5] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[5]={'translate_x':0};
   if (++completed==nbSteps) {initTransition();}
-  params[5]={'translate_x':0}
 });
 
+// Power pole
+// Source: Flicker 
+// http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
+d3.xml("data/6.svg", "image/svg+xml", function(xml) {
+  geojson_arr[6] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[6]={'translate_x':960/2};
+  if (++completed==nbSteps) {initTransition();}
+});
 
 var initTransition = function(){
   var projection = d3.geo.albers()
