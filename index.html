@@ -103,8 +103,21 @@ var initTransition = function(){
         segPathData[m].y = segPathData[m-1].y-segPathData[m].y/10;
       }
 
-      // Ending the path correctly: removing the Z element
-      segPathData.pop();
+      // Ending the path correctly: removing the Z element and any non-numeric stuff
+      var keepGoing = true;
+      while (keepGoing)
+      {
+        if (isNaN(segPathData[segPathData.length-1].x) || isNaN(segPathData[segPathData.length-1].y))
+        {
+          segPathData.pop();
+        }
+        else
+        {
+          keepGoing = false;
+        }
+      }
+
+      //segPathData.pop();
 
       // Using interpolation function
       var lineFunction = d3.svg.line()
