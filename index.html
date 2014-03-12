@@ -2,6 +2,14 @@
 <meta charset="utf-8">
 <style>
 
+svg {
+  position:absolute ;
+  left:50% ;
+  margin-left: -480px;
+  top:50% ;
+  margin-top: -300px;  
+}
+
 path {
   fill: steelblue;
   stroke: steelblue;
@@ -55,7 +63,7 @@ d3.json("data/2.json", function(error,json) {
 // http://www.projectequator.com/wp-content/uploads/2014/01/7_istock_000005830377large_seedling.jpg
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[3]={'translate_x':960/2};
+  params[3]={'translate_x':960/2,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -63,7 +71,7 @@ d3.xml("data/3.svg", "image/svg+xml", function(xml) {
 // Source: Lizzy
 d3.xml("data/4.svg", "image/svg+xml", function(xml) {
   geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[4]={'translate_x':960/2};
+  params[4]={'translate_x':960/2,'translate_y':80};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -72,7 +80,7 @@ d3.xml("data/4.svg", "image/svg+xml", function(xml) {
 // http://farm1.staticflickr.com/181/453851058_def81e5b60_b.jpg
 d3.xml("data/5.svg", "image/svg+xml", function(xml) {
   geojson_arr[5] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[5]={'translate_x':0};
+  params[5]={'translate_x':0,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -81,7 +89,7 @@ d3.xml("data/5.svg", "image/svg+xml", function(xml) {
 // http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
 d3.xml("data/6.svg", "image/svg+xml", function(xml) {
   geojson_arr[6] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[6]={'translate_x':960/2};
+  params[6]={'translate_x':960/2+100,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -114,7 +122,7 @@ var initTransition = function(){
 
       // Rewriting the SVG coordinates
       segPathData[0].x = params[k].translate_x; // center of the SVG element
-      segPathData[0].y = 20;
+      segPathData[0].y = params[k].translate_y;
 
       // Transforming to absolute coordinates
       for (var m=1;m<seg.numberOfItems-1;m++)
@@ -153,6 +161,9 @@ var initTransition = function(){
 
       // The path string can be accessed using this cryptic object access path
       darr[k] = d3.select(lineGraph[0][0]).attr('d');
+
+      // remove the svg element
+      d3.select(svg2).remove();
     }
   }
 
