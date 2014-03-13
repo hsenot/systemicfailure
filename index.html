@@ -11,7 +11,7 @@ svg {
 }
 
 path {
-  fill: black;
+  fill: steelblue;
 }
 
 </style>
@@ -228,7 +228,7 @@ var initTransition = function(){
 
   svg.append("path")
       .attr("d", d0)
-      .call(transition, d0, d1, params[darr.length-darr2.length-1].color);
+      .call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(0.));
 
   function transition(path, d0, d1, col) {
     path.transition()
@@ -248,7 +248,7 @@ var initTransition = function(){
 
           // Delaying the next transition
           //setTimeout(function(){
-            d3.select(this).call(transition, d0, d1, params[darr.length-darr2.length-1].color);
+            d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/darr.length));
           //}, 2000);
         });
   }
