@@ -11,8 +11,7 @@ svg {
 }
 
 path {
-  fill: steelblue;
-  stroke: steelblue;
+  fill: black;
 }
 
 </style>
@@ -39,23 +38,30 @@ var params = new Array(nbSteps);
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
 // Any library to do that? Require.js?
 
-// America outline
+
+// Need to manage the hues of blue to black on an automated fashion (progressive gradient)
+
+
+// World outline
 // Source: Natural Earth 110m
 d3.json("data/0.json", function(error,json) {
   geojson_arr[0] = json.features[0].geometry;
+  params[0]={'color':'black'};
   if (++completed==nbSteps) {initTransition();}
 });
 
-// California outline
+// USA outline
 // http://bl.ocks.org/mbostock/3081153
 d3.json("data/1.json", function(error,json) {
   geojson_arr[1] = json.features[0].geometry;
+  params[1]={'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
-// Simplified california outline (tolerance 1 with ogr2ogr)
+// Ohio outline
 d3.json("data/2.json", function(error,json) {
   geojson_arr[2] = json.features[0].geometry;
+  params[2]={'color':'green'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -63,7 +69,7 @@ d3.json("data/2.json", function(error,json) {
 // http://www.projectequator.com/wp-content/uploads/2014/01/7_istock_000005830377large_seedling.jpg
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[3]={'translate_x':960/2,'translate_y':20};
+  params[3]={'translate_x':960/2,'translate_y':20,'color':'steelblue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -71,7 +77,7 @@ d3.xml("data/3.svg", "image/svg+xml", function(xml) {
 // Source: Lizzy
 d3.xml("data/4.svg", "image/svg+xml", function(xml) {
   geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[4]={'translate_x':960/2,'translate_y':80};
+  params[4]={'translate_x':960/2,'translate_y':80,'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -80,7 +86,7 @@ d3.xml("data/4.svg", "image/svg+xml", function(xml) {
 // http://farm1.staticflickr.com/181/453851058_def81e5b60_b.jpg
 d3.xml("data/5.svg", "image/svg+xml", function(xml) {
   geojson_arr[5] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[5]={'translate_x':0,'translate_y':20};
+  params[5]={'translate_x':0,'translate_y':20,'color':'steelblue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -89,7 +95,7 @@ d3.xml("data/5.svg", "image/svg+xml", function(xml) {
 // http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
 d3.xml("data/6.svg", "image/svg+xml", function(xml) {
   geojson_arr[6] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[6]={'translate_x':960/2+100,'translate_y':20};
+  params[6]={'translate_x':960/2+100,'translate_y':20,'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -98,15 +104,24 @@ d3.xml("data/6.svg", "image/svg+xml", function(xml) {
 // http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
 d3.xml("data/7.svg", "image/svg+xml", function(xml) {
   geojson_arr[7] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[7]={'translate_x':0,'translate_y':20};
+  params[7]={'translate_x':0,'translate_y':20,'color':'steelblue'};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Chair
+// Source: Flicker 
+// http://farm6.staticflickr.com/5114/6924650876_3a86599a70_o.jpg
+d3.xml("data/8.svg", "image/svg+xml", function(xml) {
+  geojson_arr[8] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[8]={'translate_x':960/2,'translate_y':20,'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
 var initTransition = function(){
   var projection = d3.geo.albers()
-      .rotate([120, 0])
-      .center([0, 37.7])
-      .scale(1000);
+ //     .rotate([120, 0])
+ //     .center([0, 37.7])
+      .scale(750);
 
   // Transforming the coordinates into an SVG path (linear)
   var darr = [];
@@ -183,12 +198,13 @@ var initTransition = function(){
 
   svg.append("path")
       .attr("d", d0)
-      .call(transition, d0, d1);
+      .call(transition, d0, d1, params[darr.length-darr2.length-1].color);
 
-  function transition(path, d0, d1) {
+  function transition(path, d0, d1, col) {
     path.transition()
         // 5 seconds for the animation to play out
         .duration(2000)
+        .style('fill', function(d) { return col; })
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
         .attrTween("d", pathTween(d1, 1))
         // On transition end, proceed to the next transition
@@ -199,7 +215,7 @@ var initTransition = function(){
             darr2 = darr.slice(0);
           }
           d1 = darr2.shift();
-          d3.select(this).call(transition, d0, d1);
+          d3.select(this).call(transition, d0, d1, params[darr.length-darr2.length-1].color);
         });
   }
 
