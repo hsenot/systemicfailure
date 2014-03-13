@@ -1,0 +1,114 @@
+Elements of story-telling
+
+
+Structure:
+1) what is systemic failure?
+imagery: using cascading failures / dominoes, butterfly effect
+a couple of other examples:
+- ecosystems and species extinction
+- finance and interconnection of institutions
+
+
+Complex adaptive systems:
+- brains,
+- immune systems,
+- the Internet,
+- countries, 
+- gardens,
+- cities, 
+- beehives,
+- ...
+Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 42)
+
+
+2) the 2003 north american black out
+
+Investigation:
+
+August 14, 2003
+
+2:02 p.m. A transmission line in northeast Ohio fails due to contact with a tree in Walton Hills.
+
+2:14 p.m. An alarm system fails at FirstEnergy's control room and is not repaired.
+
+3:05 p.m. A transmission line sags into a tree and trips in Parma, south of Cleveland.
+
+3:17 p.m. Voltage dips temporarily on the Ohio portion of the grid. Controllers take no action.
+
+3:32 p.m. Power shifted by the first failure onto another power line, and causes it to sag into a tree, bringing it offline as well. While the controllers concentrate on understanding the failures, they fail to inform system controllers in nearby states.
+
+3:41 p.m. A circuit breaker connecting FirstEnergy's grid with that of American Electric Power is tripped as 2 lines fail in rapid succession in northern Ohio.
+
+4:09:02 p.m. Voltage sags deeply as Ohio draws 2 GW of power from Michigan, creating simultaneous undervoltage and overcurrent conditions as power attempts to flow in such a way as to rebalance the system's voltage.
+
+4:10:34 p.m. Suddenly bereft of demand, generating stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure, and the blackout is on.
+
+4:10:37 p.m. The eastern and western Michigan power grids disconnect from each other.
+
+4:10:38 p.m. Cleveland separates from the Pennsylvania grid.
+
+4:10:43 p.m. International connections between the United States and Canada start to fail.
+
+4:10:45 p.m. Northwestern Ontario separates from the east when the Wawa-Marathon 230 kV line north of Lake Superior disconnects. The first Ontario power plants go offline in response to the unstable voltage and current demand on the system.
+
+4:10:46 p.m. New York separates from the New England grid.
+
+4:10:50 p.m. Ontario separates from the western New York grid.
+
+4:12:03 p.m. Windsor, Ontario, and surrounding areas drop off the grid.
+
+4:12:58 p.m. Northern New Jersey separates its power-grids from New York and the Philadelphia area, causing a cascade of failing secondary generator plants along the New Jersey coast and throughout the inland regions west.
+
+4:13 p.m. End of cascading failure. 256 power plants are off-line, 85% of which went offline after the grid separations occurred, most due to the action of automatic protective controls.
+
+
+
+Effects and consequences:
+- 55 million people in 8 states over 2 countries
+- infrastructures affected:
+* power generation
+* water supply
+* transportation
+* communication
+* industry
+Interestingly, in India for instance, outages are so frequent that industries usually operate their own power plant to effectively minimise the risk associated with being on the grid.
+
+
+4) Discussion:
+=> what do we get out of these discussions? is the subject material interesting / engaging enough?
+The idea that one can get examples from one's understanding / observation of the world, and that nature and man-made systems have characteristics that help understand each other.
+
+
+- systems/infrastructure interdependency and failure propagating between systems: 
+* water / power nexus,
+Desalination plant requires a large amount of power to function.
+Coal power plants require large amounts of water, and protection from bushfires.
+* petrol / food nexus,
+Not difficult to see that there will be food shortages if petrol becomes an issue, as our supply chain are petrol-reliant.
+* communications negative feedback loop
+Communication prevented have led to additional accidents.
+
+* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, to make better decisions and build better systems tomorrow
+
+- qualities of systems that are resistant / resilient to systemic failures
+=> distribution (geographic spread), decentralisation (of power/decision-making), (bio)diversity, redundancy (no one function is carried by a single node) - no single point of failure, simplicity / DIY (food systems)
+
+
+Notion of science branches involved: 
+complexity science, based on systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, evolutionary bilogy, information theory, computational theory, biological emergence ...
+
+6 defining notions in complexity theory/science:
+- sensitivity to initial conditions (butterfly effect)
+- strange attractors (unpredictability)
+- self-similarity (fractals)
+- self-organisation (distributed control)
+- the edge of chaos (emergence)
+- fitness landscapes (continuous improvement)
+Source: Michael C. Jackson, System Thinking: Creative Holims for Managers
+via http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 45)
+
+Complexity theory: it's about the dynamics of change in a system
+Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 51)
+
+The activity of abstracting is basically a form of interaction between people in which they simplify the complexity of their own ordinary, everyday interactions in an effort to make meaning out of what they are doing. Ralph Stacey
+Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 15)

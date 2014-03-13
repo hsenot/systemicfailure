@@ -32,7 +32,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 9;
+var nbSteps = 13;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -116,6 +116,36 @@ d3.xml("data/8.svg", "image/svg+xml", function(xml) {
   params[8]={'translate_x':960/2,'translate_y':20,'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
+
+// Ohio outline
+d3.json("data/9.json", function(error,json) {
+  geojson_arr[9] = json.features[0].geometry;
+  params[9]={'color':'green'};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Affected area (8-states) outline
+d3.json("data/10.json", function(error,json) {
+  geojson_arr[10] = json.features[0].geometry;
+  params[10]={'color':'green'};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// USA outline
+// http://bl.ocks.org/mbostock/3081153
+d3.json("data/11.json", function(error,json) {
+  geojson_arr[11] = json.features[0].geometry;
+  params[11]={'color':'blue'};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Affected area (8-states) outline
+d3.json("data/12.json", function(error,json) {
+  geojson_arr[12] = json.features[0].geometry;
+  params[12]={'color':'green'};
+  if (++completed==nbSteps) {initTransition();}
+});
+
 
 var initTransition = function(){
   var projection = d3.geo.albers()
@@ -215,7 +245,11 @@ var initTransition = function(){
             darr2 = darr.slice(0);
           }
           d1 = darr2.shift();
-          d3.select(this).call(transition, d0, d1, params[darr.length-darr2.length-1].color);
+
+          // Delaying the next transition
+          //setTimeout(function(){
+            d3.select(this).call(transition, d0, d1, params[darr.length-darr2.length-1].color);
+          //}, 2000);
         });
   }
 
