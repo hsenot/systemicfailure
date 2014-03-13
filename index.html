@@ -33,7 +33,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 7;
+var nbSteps = 9;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -90,6 +90,15 @@ d3.xml("data/5.svg", "image/svg+xml", function(xml) {
 d3.xml("data/6.svg", "image/svg+xml", function(xml) {
   geojson_arr[6] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
   params[6]={'translate_x':960/2+100,'translate_y':20};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Control room
+// Source: Flicker 
+// http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
+d3.xml("data/7.svg", "image/svg+xml", function(xml) {
+  geojson_arr[7] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[7]={'translate_x':0,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -179,7 +188,7 @@ var initTransition = function(){
   function transition(path, d0, d1) {
     path.transition()
         // 5 seconds for the animation to play out
-        .duration(5000)
+        .duration(2000)
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
         .attrTween("d", pathTween(d1, 1))
         // On transition end, proceed to the next transition
