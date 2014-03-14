@@ -28,7 +28,7 @@ var svg = d3.select("body").append("svg")
     .attr("height", height);
 
 var geojson_arr = [];
-
+var darr2;
 //
 var generatedPath;
 var completed = 0;
@@ -271,45 +271,64 @@ var initTransition = function(){
     aniarr.push(darr[0]); // World outline
     aniarr.push(darr[0]); // World outline
     aniarr.push(darr[1]); // USA outline
+    aniarr.push(darr[1]); // USA outline
+    aniarr.push(darr[2]); // Ohio outline
     aniarr.push(darr[2]); // Ohio outline
     aniarr.push(darr[3]); // Seedling
+    aniarr.push(darr[3]); // Seedling
+    aniarr.push(darr[4]); // Tree
     aniarr.push(darr[4]); // Tree
     aniarr.push(darr[5]); // Bird
+    aniarr.push(darr[5]); // Bird
     aniarr.push(darr[6]); // Power pole
-    aniarr.push(darr[7]); // Control room
+    aniarr.push(darr[6]); // Power pole
+    //aniarr.push(darr[7]); // Control room
+    aniarr.push(darr[10]); // Buttons
     aniarr.push(darr[10]); // Buttons
     aniarr.push(darr[8]); // Chair
+    aniarr.push(darr[8]); // Chair
+    aniarr.push(darr[11]); // Screens in control room
     aniarr.push(darr[11]); // Screens in control room
     aniarr.push(darr[12]); // Skyline NYC
+    aniarr.push(darr[12]); // Skyline NYC
+    aniarr.push(darr[13]); // Generator
     aniarr.push(darr[13]); // Generator
     aniarr.push(darr[14]); // Transformers
+    aniarr.push(darr[14]); // Transformers
+    aniarr.push(darr[15]); // Transmission tower (from below)
     aniarr.push(darr[15]); // Transmission tower (from below)
     aniarr.push(darr[16]); // Railway tracks
-    aniarr.push(darr[17]); // Railway tracks
-    aniarr.push(darr[2]); // Ohio outline
+    aniarr.push(darr[16]); // Railway tracks
+    aniarr.push(darr[17]); // Traffic lights
+    aniarr.push(darr[17]); // Traffic lights
     aniarr.push(darr[9]); // Affected area (8-states) outline
     aniarr.push(darr[1]); // USA outline
     aniarr.push(darr[9]); // Affected area (8-states) outline
     aniarr.push(darr[9]); // Affected area (8-states) outline
-    aniarr.push(darr[2]); // Ohio outline
-    aniarr.push(darr[2]); // Ohio outline
+    //aniarr.push(darr[2]); // Ohio outline
+    //aniarr.push(darr[2]); // Ohio outline
 
     return aniarr;
   }
 
-  // Cloning the original array and initialising the 1st transition
-  var darr2 = orchestrate();
-  var d0 = darr2.shift();
-  var d1 = darr2.shift();
 
-  svg.append("path")
-      .attr("d", d0)
-      .call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(0.));
+  function startAnimation(){
+    // Cloning the original array and initialising the 1st transition
+    darr2 = orchestrate();
+    var d0 = darr2.shift();
+    var d1 = darr2.shift();
+
+    svg.append("path")
+        .attr("d", d0)
+        .call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(0.));  
+  }
+
+  startAnimation();
 
   function transition(path, d0, d1, col) {
     path.transition()
         // Milliseconds for the animation to play out
-        .duration(5000)
+        .duration(4000)
         .style('fill', function(d) { return col; })
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
         .attrTween("d", pathTween(d1, 4))
@@ -325,7 +344,7 @@ var initTransition = function(){
           // Delaying the next transition
           // That should now be done in the orchestration function by repeating a step
           // Attempts at using setTimeout failed
-          d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/darr.length));
+          d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/(orchestrate()).length));
         });
   }
 

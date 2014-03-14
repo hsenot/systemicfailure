@@ -2,38 +2,40 @@ Elements of story-telling
 
 
 I'll be reporting on an "investigation of a systemic failure in a graph of blue hues".
+I have chosen this task out of interest for how people interact with systems. We design systems, and in return they shape us. 
 
-I have chosen this task out of interest for how people interact with systems. We design systems, that in return shape us. I was also interested to know if there were scientific foundations to the study of complex systems like power grids.
+I was also interested to know if there was a scientific foundation to the study of complex systems like power grids. And there is: "system theory" as part of the larger, emergent "complexity science".
 
-And there is: "system theory" as part of a larger, emergent discipline called "complexity science".
+Complexity science is an unifying theory covering systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, information theory, computational theory, biological emergence ... Highly interdisciplinary.
 
 
 1) Context / definitions
 
-To describe a systemic failure, we need a system. As a starting point, we'll define a "system". A "system" is an organised group of elements that collectively perform a function.
+To investigate a systemic failure, we need a system. As a starting point, we'll define a "system". A "system" is an organised group of elements that collectively perform a function.
 
 Some examples of systems are:
-* natural: the brain, immune systems, beehives, ecosystems, ..
-* designed: cities, electricity grids, the Internet, gardens .. 
+* natural: the brain, immune systems, beehives, a colony of ants, ecosystems, ..
+* designed: cities, electricity grids, the Internet, gardens, the stock market .. 
 Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 42)
 
-* your own examples of systems: food systems, government, the economy, an industry, the healthcare system, ...
+* your own examples of systems: food systems, government, political parties, the economy, an industry, the healthcare system, ...
 
+Notes:
+Of those, the most interesting class is "complex adaptative systems"
 A system is an abstraction, and there are many ways to see the world through the "system" lense - it's called "system thinking".
 
 
-
-Now, a systemic failure, also known as cascading failure, results from an initially small problem within the system that propagates and compromises the system's normal functioning and its ability to recover. You can think of it as cascading dominoes.
+Now, a systemic failure, also known as cascading failure, results from an initially small problem within the system that propagates and compromises the system's normal functioning and its ability to recover. One can think of it as cascading dominoes (of problems).
 
 Examples of systemic failures:
 - in finance, the collapse of a financial institution can plundge other institutions (and even whole economies) into a collapsing spiral.
-- in an ecosystems, the extinction of a key species can lead to the extinction of a significant part of this ecosystem.
-- in an electricity grid, a localised failure - if unchecked - can propagate to connected power lines and cause cascading issues leading to entire regions loosing power: the blackout.
+- in an ecosystems, the extinction of a key species (known as keystone species) can lead to the extinction of a significant part of this ecosystem.
+- in a power grid, a localised event can put additional pressure on interconnected components and cause cascading issues leading to entire areas (even regions) loosing power: the blackout.
 
 
 The systemic failure we'll investigate now is the electricity blackout that happened in North America in 2003.
 
-The system "electric grid" is composed of poles, wires, generators, operators, utilities, consumers, control processes, procedures and regulatory artefacts. It's widely acknowledged that the North American grid is one of the most complex system ever designed by humans.
+The North American power grid is widely acknowledged as one of the most complex system ever designed by humans. The system "electric grid" is composed of poles, wires, generators, operators, utilities, consumers, control processes, procedures and regulatory artefacts.
 
 
 
@@ -52,9 +54,7 @@ Lead up
 
 3:17 p.m. Voltage dips temporarily on the Ohio portion of the grid. Controllers take no action.
 
-3:32 p.m. Power shifted by the first failure onto another power line, and causes it to sag into a tree, bringing it offline as well. While the controllers concentrate on understanding the failures, they fail to inform system controllers in nearby states.
-
-3:41 p.m. A circuit breaker connecting 2 utility grids is tripped as 2 lines fail in rapid succession in northern Ohio.
+3:32 p.m. Power shifted by the first failure onto another power line, and causes it to sag into a tree, bringing it offline as well. While the controllers concentrate on understanding the failures, they fail to inform nearby states.
 
 4:09:02 p.m. Ohio draws 2 GW of power from Michigan, creating simultaneous undervoltage and overcurrent conditions as power attempts to flow in such a way as to rebalance the system's voltage.
 
@@ -112,9 +112,12 @@ Internet access was unavailable, except for dial-up access modem from laptop com
 
 4) Discussion:
 
-* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, make better decisions and build better systems tomorrow
+* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, make better decisions and build better systems tomorrow. 
 
-Interdependency and failure propagating between systems: 
+It's also to focus efforts and resources on the mechanisms that are critical to systems integrity - for instance, the conservation of a keystone species can help conserve the ecosystem as a whole.
+
+
+* Interdependency and failure propagating between systems: 
 * water / power nexus,
 Desalination plant requires a large amount of power to function.
 Coal power plants require large amounts of water, and protection from bushfires.
@@ -124,8 +127,7 @@ Quite clear there will be food shortages if petrol becomes an issue, as our supp
 Communication prevented have led to additional accidents.
 
 
-How can we design a system that minimises the risk of systemic failure?
-
+* How can we design a system that minimises the risk of systemic failure?
 - qualities of systems that are resistant / resilient to systemic failures
 => distribution (geographic spread), 
 => decentralisation (of power/decision-making), 
@@ -134,12 +136,7 @@ How can we design a system that minimises the risk of systemic failure?
 => simplicity / DIY (food systems)
 
 
-Wrap-up: pointers for further research
---------------------------------------
-
-Notion of science branches involved: 
-complexity science is an umbrella term for research involving a mix of systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, evolutionary bilogy, information theory, computational theory, biological emergence ...
-
+* Pointers for further research
 In an world increasing in complexity, complexity theory is a way to abstract and make sense, and draw parallels between systems, to expand our understanding.
 
 6 defining notions in complexity theory/science:
