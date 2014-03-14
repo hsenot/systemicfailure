@@ -32,7 +32,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 10;
+var nbSteps = 12;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -120,6 +120,24 @@ d3.json("data/9.json", function(error,json) {
   if (++completed==nbSteps) {initTransition();}
 });
 
+// Controls / button (Russian)
+// Source: Flicker 
+// http://farm8.staticflickr.com/7041/6827271264_0ac42dffe8_o.jpg
+d3.xml("data/10.svg", "image/svg+xml", function(xml) {
+  geojson_arr[10] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[10]={'translate_x':960/2-100,'translate_y':20};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Controls room screens (Bank)
+// Source: Wikipedia 
+// http://upload.wikimedia.org/wikipedia/commons/4/4c/Deutsche-boerse-parkett-ffm008.jpg
+d3.xml("data/11.svg", "image/svg+xml", function(xml) {
+  geojson_arr[11] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[11]={'translate_x':960/2-100,'translate_y':120};
+  if (++completed==nbSteps) {initTransition();}
+});
+
 var initTransition = function(){
   var projection = d3.geo.albers()
  //     .rotate([120, 0])
@@ -174,8 +192,6 @@ var initTransition = function(){
         }
       }
 
-      //segPathData.pop();
-
       // Using interpolation function
       var lineFunction = d3.svg.line()
                              .x(function(d) { return d.x; })
@@ -198,20 +214,24 @@ var initTransition = function(){
   function orchestrate(){
     var aniarr = new Array();
 
-    aniarr.push(darr[0]);
-    aniarr.push(darr[1]);
-    aniarr.push(darr[2]);
-    aniarr.push(darr[3]);
-    aniarr.push(darr[4]);
-    aniarr.push(darr[5]);
-    aniarr.push(darr[6]);
-    aniarr.push(darr[7]);
-    aniarr.push(darr[8]);
-    aniarr.push(darr[2]);
-    aniarr.push(darr[9]);
-    aniarr.push(darr[1]);
-    aniarr.push(darr[9]);
-    aniarr.push(darr[2]);
+    //aniarr.push(darr[0]); // World outline
+    //aniarr.push(darr[0]); // World outline
+    //aniarr.push(darr[1]); // USA outline
+    //aniarr.push(darr[2]); // Ohio outline
+    //aniarr.push(darr[3]); // Seedling
+    //aniarr.push(darr[4]); // Tree
+    aniarr.push(darr[5]); // Bird
+    aniarr.push(darr[6]); // Power pole
+    aniarr.push(darr[7]); // Control room
+    aniarr.push(darr[10]); // Control room
+    aniarr.push(darr[8]); // Chair
+    aniarr.push(darr[11]); // Chair
+    //aniarr.push(darr[2]); // Ohio outline
+    //aniarr.push(darr[9]); // Affected area (8-states) outline
+    //aniarr.push(darr[1]); // USA outline
+    //aniarr.push(darr[9]); // Affected area (8-states) outline
+    //aniarr.push(darr[2]); // Ohio outline
+    //aniarr.push(darr[2]); // Ohio outline
 
     return aniarr;
   }
@@ -227,11 +247,11 @@ var initTransition = function(){
 
   function transition(path, d0, d1, col) {
     path.transition()
-        // 5 seconds for the animation to play out
+        // Milliseconds for the animation to play out
         .duration(2000)
         .style('fill', function(d) { return col; })
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
-        .attrTween("d", pathTween(d1, 1))
+        .attrTween("d", pathTween(d1, 4))
         // On transition end, proceed to the next transition
         .each("end", function() {
           d0 = d1;
@@ -242,9 +262,9 @@ var initTransition = function(){
           d1 = darr2.shift();
 
           // Delaying the next transition
-          //d3.timer(function(){
-            d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/darr.length));
-          //}, 2000);
+          // That should now be done in the orchestration function by repeating a step
+          // Attempts at using setTimeout failed
+          d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/darr.length));
         });
   }
 
