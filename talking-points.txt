@@ -1,30 +1,37 @@
 Elements of story-telling
 
 
-I'll be reporting on an investigation of a systemic failure in a graph of blue hues.
+I'll be reporting on an "investigation of a systemic failure in a graph of blue hues".
 
+1) Context / definitions
 
-Structure:
-1) what is systemic failure?
-imagery: using cascading failures / dominoes, butterfly effect
-a couple of other examples:
-- ecosystems and species extinction
-- finance and interconnection of institutions
+To describe a systemic failure, we need a system. As a broad starting point, a "system" is a group of elements organised into a cooperative manner.
 
+Some examples of systems are:
+* natural: the brain, immune systems, beehives, ecosystems, ..
+* designed: cities, electricity grids, the Internet, gardens .. 
 
 Complex adaptive systems:
-- brains,
-- immune systems,
-- the Internet,
-- countries, 
-- gardens,
-- cities, 
-- beehives,
-- ...
 Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 42)
 
 
-2) Investigation of the 2003 north american black out
+A systemic failure, also known as cascading failure, results from an initially small problem within the system that propagates and preventes the system normal functioning and its ability to recover. The imagery associated with a systemic failure is that of cascading dominoes, or of the "butterfly effect".
+
+A couple of examples of systemic failures:
+- finance and interconnection of institutions: in finance, the collapse of a financial institution can plundge other institutions (and even whole economies) into a collapsing spiral.
+- in an ecosystems, the extinction of a key species can lead to the extinction of a significant part of this ecosystem.
+- in agriculture, mono-culture systems relying on chemical pesticides can be annihilated by the emergence of a pest resistant to pesticides.
+
+
+
+The systemic failure we'll consider now is the electricity blackout that happened in North America in 2003.
+
+The system "electric grid" is composed of poles, wires, generators, operators, utilities, consumers, control processes, procedures and regulatory artefacts. It's widely acknowledged that the North American grid is one of the most complex system ever designed by humans.
+
+I'd like to attract your attention on detecting on actions or system modifications that could have prevented the sequence of events I am about to describe. The game is "how do you design a system that minimises the risk of systemic failure?" 
+
+
+2) Investigation => start the animation here
 
 August 14, 2003
 
@@ -45,7 +52,7 @@ Lead up
 
 4:09:02 p.m. Ohio draws 2 GW of power from Michigan, creating simultaneous undervoltage and overcurrent conditions as power attempts to flow in such a way as to rebalance the system's voltage.
 
-4:10:34 p.m. Suddenly bereft of demand, generating stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure; the blackout is on.
+4:10:34 p.m. Suddenly bereft of demand, power stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure; the blackout is on.
 
 
 Chain of event from the initial blackout
@@ -61,7 +68,7 @@ Cleveland separates from the Pennsylvania grid.
 International connections between the United States and Canada start to fail.
 
 2 seconds later:
-Northwestern Ontario separates from the east when the Wawa-Marathon 230 kV line north of Lake Superior disconnects. The first Ontario power plants go offline in response to the unstable voltage and current demand on the system.
+Northwestern Ontario separates from the east and Ontario power plants go offline in response to the unstable voltage and current demand on the system.
 
 1 second later:
 New York separates from the New England grid.
@@ -70,28 +77,30 @@ New York separates from the New England grid.
 Ontario separates from the western New York grid.
 
 2 minutes later:
-Northern New Jersey separates its power-grids from New York and the Philadelphia area, causing a cascade of failing secondary generator plants along the New Jersey coast and throughout the inland regions west.
+Northern New Jersey separates its power-grids from New York and the Philadelphia area, causing a cascade of failing power plants along the coast and throughout the inland regions west.
 
 2 seconds later:
-At 4:13 p.m, it's the end of cascading failure. 256 power plants are off-line, 85% of which went offline after the grid separations occurred, most due to the action of automatic protective controls.
+At 4:13 p.m, it's the end of cascading failure. 256 power plants are off-line, 85% of which went offline after the grid separations occurred, most due to automatic protective controls.
 
 
 Effects and consequences
 ------------------------
 
 - 55 million people affected in 8 states over 2 countries
-- other systems affected:
+- infrastructure systems affected:
 * water supply
-Lost water pressure due to electric pumps not working, causing potential contamination of the water supply. 4 million people were under a boil water advisory for a few days after the blackout. There were also reports of sewage spills in rivers.
-* transportation
-All trains in and out of NYC were stopped. An "all-diesel" barebone service was restored the day after. Passenger screening at regional airports ceased, so these airports were shut down too. In New York, flights were cancelled because of difficulties with the e-ticketing system. Air Canada flights remained grounded for an additional day due to improper supply to its control center.
-Many gas stations were unable to pump fuel. This compounded traffic problems as users drove their car until they ran out of petrol on the highway. Price at fuel stations sky-rocketted. Some oil refineries on the East Coast were shut down, and slow to resume operations. This drove fuel prices up, and lead authorities to consider gasoline rationing.
-* communication
-Cell phone communication were disrupted, especially after phone tower backup power ran out of fuel. Wired phone lines continued to work. Radio stations were knocked off air, but were quickly back on air with backup power. Internet access was unavailable, except for dial-up access modem from laptop computers (until their battery ran out of charge). Amateur radio opertoars passed emergency communications during the blackout.
 * industry
-Large number of factories had to shut down or slow down production due to the necessity of conserving energy, and supply chain problems. The border crossing near Detroit had a 7-hour wait due to the lack of electronic border check systems.
+* transportation
+All subways and all trains in and out of NYC were stopped. An "all-diesel" barebone service was restored the day after. Passenger screening at regional airports ceased, so these airports were shut down too. In New York, flight operations were further delayed because of difficulties with the e-ticketing system. 
+Only one airport wasn't affected in the region - a former military base, it had its own generators.
+Air Canada flights remained grounded for an additional day due to improper power supply to its control towers.
 
-Interestingly, in India for instance, outages are so frequent that industries often operate their own power plant to effectively minimise the risk associated with being on the grid.
+Many gas stations were unable to pump fuel. This compounded traffic problems as users drove their car until they ran out of petrol on the highway. Price at fuel stations sky-rocketted. Some oil refineries on the East Coast shut down, and resume operations slowly. This drove fuel prices up, and lead authorities to consider gasoline rationing.
+
+The border crossing near Detroit had a 7-hour wait due to the unavailability of the electronic border check systems.
+
+* communication
+Cell phone communication were disrupted, especially after mobile phone towers backup power ran out of fuel. Wired phone lines continued to work. New Yorkers were lining up 10 deep or more at pay phones. Radio stations were knocked off air, but were quickly back on air with backup power. Internet access was unavailable, except for dial-up access modem from laptop computers (until their battery ran out of charge). Amateur radio operators were able to pass emergency communications during the blackout.
 
 
 4) Discussion:

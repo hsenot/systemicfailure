@@ -32,7 +32,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 17;
+var nbSteps = 18;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -183,6 +183,15 @@ d3.xml("data/16.svg", "image/svg+xml", function(xml) {
   if (++completed==nbSteps) {initTransition();}
 });
 
+// Traffic lights
+// Source: Filcher 
+// http://farm4.staticflickr.com/3537/3342052427_d3b8b58690_o.jpg
+d3.xml("data/17.svg", "image/svg+xml", function(xml) {
+  geojson_arr[17] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[17]={'translate_x':960/2+100,'translate_y':80};
+  if (++completed==nbSteps) {initTransition();}
+});
+
 var initTransition = function(){
   var projection = d3.geo.albers()
  //     .rotate([120, 0])
@@ -259,30 +268,31 @@ var initTransition = function(){
   function orchestrate(){
     var aniarr = new Array();
 
-    //aniarr.push(darr[0]); // World outline
-    //aniarr.push(darr[0]); // World outline
-    //aniarr.push(darr[1]); // USA outline
-    //aniarr.push(darr[2]); // Ohio outline
-    //aniarr.push(darr[3]); // Seedling
-    //aniarr.push(darr[4]); // Tree
-    //aniarr.push(darr[5]); // Bird
-    //aniarr.push(darr[6]); // Power pole
-    //aniarr.push(darr[7]); // Control room
-    //aniarr.push(darr[10]); // Buttons
-    //aniarr.push(darr[8]); // Chair
-    //aniarr.push(darr[11]); // Screens in control room
-    //aniarr.push(darr[12]); // Skyline NYC
-    //aniarr.push(darr[13]); // Generator
+    aniarr.push(darr[0]); // World outline
+    aniarr.push(darr[0]); // World outline
+    aniarr.push(darr[1]); // USA outline
+    aniarr.push(darr[2]); // Ohio outline
+    aniarr.push(darr[3]); // Seedling
+    aniarr.push(darr[4]); // Tree
+    aniarr.push(darr[5]); // Bird
+    aniarr.push(darr[6]); // Power pole
+    aniarr.push(darr[7]); // Control room
+    aniarr.push(darr[10]); // Buttons
+    aniarr.push(darr[8]); // Chair
+    aniarr.push(darr[11]); // Screens in control room
+    aniarr.push(darr[12]); // Skyline NYC
+    aniarr.push(darr[13]); // Generator
     aniarr.push(darr[14]); // Transformers
     aniarr.push(darr[15]); // Transmission tower (from below)
     aniarr.push(darr[16]); // Railway tracks
+    aniarr.push(darr[17]); // Railway tracks
     aniarr.push(darr[2]); // Ohio outline
-    //aniarr.push(darr[9]); // Affected area (8-states) outline
-    //aniarr.push(darr[1]); // USA outline
-    //aniarr.push(darr[9]); // Affected area (8-states) outline
-    //aniarr.push(darr[9]); // Affected area (8-states) outline
-    //aniarr.push(darr[2]); // Ohio outline
-    //aniarr.push(darr[2]); // Ohio outline
+    aniarr.push(darr[9]); // Affected area (8-states) outline
+    aniarr.push(darr[1]); // USA outline
+    aniarr.push(darr[9]); // Affected area (8-states) outline
+    aniarr.push(darr[9]); // Affected area (8-states) outline
+    aniarr.push(darr[2]); // Ohio outline
+    aniarr.push(darr[2]); // Ohio outline
 
     return aniarr;
   }
@@ -299,7 +309,7 @@ var initTransition = function(){
   function transition(path, d0, d1, col) {
     path.transition()
         // Milliseconds for the animation to play out
-        .duration(2000)
+        .duration(5000)
         .style('fill', function(d) { return col; })
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
         .attrTween("d", pathTween(d1, 4))
