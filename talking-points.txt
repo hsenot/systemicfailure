@@ -49,6 +49,8 @@ Lead up
 
 Chain of event from the initial blackout
 ----------------------------------------
+From there:
+
 3 seconds later:
 The eastern and western Michigan power grids disconnect from each other.
 

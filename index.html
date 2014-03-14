@@ -32,7 +32,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 12;
+var nbSteps = 16;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -98,10 +98,10 @@ d3.xml("data/6.svg", "image/svg+xml", function(xml) {
 
 // Control room
 // Source: Flicker 
-// http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
+// ???
 d3.xml("data/7.svg", "image/svg+xml", function(xml) {
   geojson_arr[7] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[7]={'translate_x':0,'translate_y':20};
+  params[7]={'translate_x':50,'translate_y':40};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -110,7 +110,7 @@ d3.xml("data/7.svg", "image/svg+xml", function(xml) {
 // http://farm6.staticflickr.com/5114/6924650876_3a86599a70_o.jpg
 d3.xml("data/8.svg", "image/svg+xml", function(xml) {
   geojson_arr[8] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[8]={'translate_x':960/2,'translate_y':20};
+  params[8]={'translate_x':960/2,'translate_y':0};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -135,6 +135,42 @@ d3.xml("data/10.svg", "image/svg+xml", function(xml) {
 d3.xml("data/11.svg", "image/svg+xml", function(xml) {
   geojson_arr[11] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
   params[11]={'translate_x':960/2-100,'translate_y':120};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Panorama / skyline Manhattan
+// Source: Wikipedia 
+// http://upload.wikimedia.org/wikipedia/commons/4/4c/Deutsche-boerse-parkett-ffm008.jpg
+d3.xml("data/12.svg", "image/svg+xml", function(xml) {
+  geojson_arr[12] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[12]={'translate_x':960/2-115,'translate_y':350};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Generator
+// Source: Wikipedia 
+// http://upload.wikimedia.org/wikipedia/commons/6/69/Generator-20071117.jpg
+d3.xml("data/13.svg", "image/svg+xml", function(xml) {
+  geojson_arr[13] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[13]={'translate_x':115,'translate_y':20};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Transfomer
+// Source: Wikipedia 
+// http://upload.wikimedia.org/wikipedia/commons/1/10/Electric_insulators_on_top_of_a_transformer_(2).JPG
+d3.xml("data/14.svg", "image/svg+xml", function(xml) {
+  geojson_arr[14] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[14]={'translate_x':115,'translate_y':20};
+  if (++completed==nbSteps) {initTransition();}
+});
+
+// Power line
+// Source: Flicker 
+// http://farm7.staticflickr.com/6035/6279909759_9dd837d4a0_o.jpg
+d3.xml("data/15.svg", "image/svg+xml", function(xml) {
+  geojson_arr[15] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
+  params[15]={'translate_x':960/2-115,'translate_y':120};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -223,9 +259,13 @@ var initTransition = function(){
     aniarr.push(darr[5]); // Bird
     aniarr.push(darr[6]); // Power pole
     aniarr.push(darr[7]); // Control room
-    aniarr.push(darr[10]); // Control room
+    aniarr.push(darr[10]); // Buttons
     aniarr.push(darr[8]); // Chair
-    aniarr.push(darr[11]); // Chair
+    aniarr.push(darr[11]); // Screens in control room
+    aniarr.push(darr[12]); // Skyline NYC
+    aniarr.push(darr[13]); // Generator
+    aniarr.push(darr[14]); // Transformers
+    aniarr.push(darr[15]); // Transmission tower (from below)
     //aniarr.push(darr[2]); // Ohio outline
     //aniarr.push(darr[9]); // Affected area (8-states) outline
     //aniarr.push(darr[1]); // USA outline
