@@ -47,9 +47,9 @@ Lead up
 
 4:10:34 p.m. Suddenly bereft of demand, generating stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure; the blackout is on.
 
+
 Chain of event from the initial blackout
 ----------------------------------------
-From there:
 
 3 seconds later:
 The eastern and western Michigan power grids disconnect from each other.
@@ -79,15 +79,19 @@ At 4:13 p.m, it's the end of cascading failure. 256 power plants are off-line, 8
 Effects and consequences
 ------------------------
 
-- 55 million people in 8 states over 2 countries
-- infrastructures affected:
-* power generation
+- 55 million people affected in 8 states over 2 countries
+- other systems affected:
 * water supply
+Lost water pressure due to electric pumps not working, causing potential contamination of the water supply. 4 million people were under a boil water advisory for a few days after the blackout. There were also reports of sewage spills in rivers.
 * transportation
+All trains in and out of NYC were stopped. An "all-diesel" barebone service was restored the day after. Passenger screening at regional airports ceased, so these airports were shut down too. In New York, flights were cancelled because of difficulties with the e-ticketing system. Air Canada flights remained grounded for an additional day due to improper supply to its control center.
+Many gas stations were unable to pump fuel. This compounded traffic problems as users drove their car until they ran out of petrol on the highway. Price at fuel stations sky-rocketted. Some oil refineries on the East Coast were shut down, and slow to resume operations. This drove fuel prices up, and lead authorities to consider gasoline rationing.
 * communication
+Cell phone communication were disrupted, especially after phone tower backup power ran out of fuel. Wired phone lines continued to work. Radio stations were knocked off air, but were quickly back on air with backup power. Internet access was unavailable, except for dial-up access modem from laptop computers (until their battery ran out of charge). Amateur radio opertoars passed emergency communications during the blackout.
 * industry
-Interestingly, in India for instance, outages are so frequent that industries often operate their own power plant to effectively minimise the risk associated with being on the grid.
+Large number of factories had to shut down or slow down production due to the necessity of conserving energy, and supply chain problems. The border crossing near Detroit had a 7-hour wait due to the lack of electronic border check systems.
 
+Interestingly, in India for instance, outages are so frequent that industries often operate their own power plant to effectively minimise the risk associated with being on the grid.
 
 
 4) Discussion:
@@ -104,11 +108,14 @@ Not difficult to see that there will be food shortages if petrol becomes an issu
 * communications negative feedback loop
 Communication prevented have led to additional accidents.
 
-* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, to make better decisions and build better systems tomorrow
+* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, make better decisions and build better systems tomorrow
 
 - qualities of systems that are resistant / resilient to systemic failures
 => distribution (geographic spread), decentralisation (of power/decision-making), (bio)diversity, redundancy (no one function is carried by a single node) - no single point of failure, simplicity / DIY (food systems)
 
+
+Wrap-up: pointers for further research
+--------------------------------------
 
 Notion of science branches involved: 
 complexity science, based on systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, evolutionary bilogy, information theory, computational theory, biological emergence ...
