@@ -1,6 +1,9 @@
 Elements of story-telling
 
 
+I'll be reporting on an investigation of a systemic failure in a graph of blue hues.
+
+
 Structure:
 1) what is systemic failure?
 imagery: using cascading failures / dominoes, butterfly effect
@@ -21,49 +24,59 @@ Complex adaptive systems:
 Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 42)
 
 
-2) the 2003 north american black out
-
-Investigation:
+2) Investigation of the 2003 north american black out
 
 August 14, 2003
 
-2:02 p.m. A transmission line in northeast Ohio fails due to contact with a tree in Walton Hills.
+Lead up
+-------
 
-2:14 p.m. An alarm system fails at FirstEnergy's control room and is not repaired.
+2:02 p.m. A transmission line in northeast Ohio fails due to contact with a tree.
 
-3:05 p.m. A transmission line sags into a tree and trips in Parma, south of Cleveland.
+2:14 p.m. An alarm system fails at the utility control room and is not repaired.
+
+3:05 p.m. A transmission line sags into a tree and trips.
 
 3:17 p.m. Voltage dips temporarily on the Ohio portion of the grid. Controllers take no action.
 
 3:32 p.m. Power shifted by the first failure onto another power line, and causes it to sag into a tree, bringing it offline as well. While the controllers concentrate on understanding the failures, they fail to inform system controllers in nearby states.
 
-3:41 p.m. A circuit breaker connecting FirstEnergy's grid with that of American Electric Power is tripped as 2 lines fail in rapid succession in northern Ohio.
+3:41 p.m. A circuit breaker connecting 2 utility grids is tripped as 2 lines fail in rapid succession in northern Ohio.
 
-4:09:02 p.m. Voltage sags deeply as Ohio draws 2 GW of power from Michigan, creating simultaneous undervoltage and overcurrent conditions as power attempts to flow in such a way as to rebalance the system's voltage.
+4:09:02 p.m. Ohio draws 2 GW of power from Michigan, creating simultaneous undervoltage and overcurrent conditions as power attempts to flow in such a way as to rebalance the system's voltage.
 
-4:10:34 p.m. Suddenly bereft of demand, generating stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure, and the blackout is on.
+4:10:34 p.m. Suddenly bereft of demand, generating stations go offline, creating a huge power deficit. In seconds, power surges in from the east, overloading east-coast power plants whose generators go offline as a protective measure; the blackout is on.
 
-4:10:37 p.m. The eastern and western Michigan power grids disconnect from each other.
+Chain of event from the initial blackout
+----------------------------------------
+3 seconds later:
+The eastern and western Michigan power grids disconnect from each other.
 
-4:10:38 p.m. Cleveland separates from the Pennsylvania grid.
+1 second later:
+Cleveland separates from the Pennsylvania grid.
 
-4:10:43 p.m. International connections between the United States and Canada start to fail.
+5 seconds later:
+International connections between the United States and Canada start to fail.
 
-4:10:45 p.m. Northwestern Ontario separates from the east when the Wawa-Marathon 230 kV line north of Lake Superior disconnects. The first Ontario power plants go offline in response to the unstable voltage and current demand on the system.
+2 seconds later:
+Northwestern Ontario separates from the east when the Wawa-Marathon 230 kV line north of Lake Superior disconnects. The first Ontario power plants go offline in response to the unstable voltage and current demand on the system.
 
-4:10:46 p.m. New York separates from the New England grid.
+1 second later:
+New York separates from the New England grid.
 
-4:10:50 p.m. Ontario separates from the western New York grid.
+4 seconds later:
+Ontario separates from the western New York grid.
 
-4:12:03 p.m. Windsor, Ontario, and surrounding areas drop off the grid.
+2 minutes later:
+Northern New Jersey separates its power-grids from New York and the Philadelphia area, causing a cascade of failing secondary generator plants along the New Jersey coast and throughout the inland regions west.
 
-4:12:58 p.m. Northern New Jersey separates its power-grids from New York and the Philadelphia area, causing a cascade of failing secondary generator plants along the New Jersey coast and throughout the inland regions west.
-
-4:13 p.m. End of cascading failure. 256 power plants are off-line, 85% of which went offline after the grid separations occurred, most due to the action of automatic protective controls.
-
+2 seconds later:
+At 4:13 p.m, it's the end of cascading failure. 256 power plants are off-line, 85% of which went offline after the grid separations occurred, most due to the action of automatic protective controls.
 
 
-Effects and consequences:
+Effects and consequences
+------------------------
+
 - 55 million people in 8 states over 2 countries
 - infrastructures affected:
 * power generation
@@ -71,7 +84,8 @@ Effects and consequences:
 * transportation
 * communication
 * industry
-Interestingly, in India for instance, outages are so frequent that industries usually operate their own power plant to effectively minimise the risk associated with being on the grid.
+Interestingly, in India for instance, outages are so frequent that industries often operate their own power plant to effectively minimise the risk associated with being on the grid.
+
 
 
 4) Discussion:

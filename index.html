@@ -32,7 +32,7 @@ var geojson_arr = [];
 //
 var generatedPath;
 var completed = 0;
-var nbSteps = 13;
+var nbSteps = 10;
 var params = new Array(nbSteps);
 
 // Surprisingly difficult to wait for ALL JSON files to have arrived (inside a loop)
@@ -46,7 +46,6 @@ var params = new Array(nbSteps);
 // Source: Natural Earth 110m
 d3.json("data/0.json", function(error,json) {
   geojson_arr[0] = json.features[0].geometry;
-  params[0]={'color':'black'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -54,14 +53,12 @@ d3.json("data/0.json", function(error,json) {
 // http://bl.ocks.org/mbostock/3081153
 d3.json("data/1.json", function(error,json) {
   geojson_arr[1] = json.features[0].geometry;
-  params[1]={'color':'blue'};
   if (++completed==nbSteps) {initTransition();}
 });
 
 // Ohio outline
 d3.json("data/2.json", function(error,json) {
   geojson_arr[2] = json.features[0].geometry;
-  params[2]={'color':'green'};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -69,7 +66,7 @@ d3.json("data/2.json", function(error,json) {
 // http://www.projectequator.com/wp-content/uploads/2014/01/7_istock_000005830377large_seedling.jpg
 d3.xml("data/3.svg", "image/svg+xml", function(xml) {
   geojson_arr[3] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[3]={'translate_x':960/2,'translate_y':20,'color':'steelblue'};
+  params[3]={'translate_x':960/2,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -77,7 +74,7 @@ d3.xml("data/3.svg", "image/svg+xml", function(xml) {
 // Source: Lizzy
 d3.xml("data/4.svg", "image/svg+xml", function(xml) {
   geojson_arr[4] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[4]={'translate_x':960/2,'translate_y':80,'color':'blue'};
+  params[4]={'translate_x':960/2,'translate_y':80};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -86,7 +83,7 @@ d3.xml("data/4.svg", "image/svg+xml", function(xml) {
 // http://farm1.staticflickr.com/181/453851058_def81e5b60_b.jpg
 d3.xml("data/5.svg", "image/svg+xml", function(xml) {
   geojson_arr[5] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[5]={'translate_x':0,'translate_y':20,'color':'steelblue'};
+  params[5]={'translate_x':0,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -95,7 +92,7 @@ d3.xml("data/5.svg", "image/svg+xml", function(xml) {
 // http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
 d3.xml("data/6.svg", "image/svg+xml", function(xml) {
   geojson_arr[6] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[6]={'translate_x':960/2+100,'translate_y':20,'color':'blue'};
+  params[6]={'translate_x':960/2+100,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -104,7 +101,7 @@ d3.xml("data/6.svg", "image/svg+xml", function(xml) {
 // http://farm7.staticflickr.com/6048/6367187383_1a4beb7476_o.jpg
 d3.xml("data/7.svg", "image/svg+xml", function(xml) {
   geojson_arr[7] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[7]={'translate_x':0,'translate_y':20,'color':'steelblue'};
+  params[7]={'translate_x':0,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
@@ -113,39 +110,15 @@ d3.xml("data/7.svg", "image/svg+xml", function(xml) {
 // http://farm6.staticflickr.com/5114/6924650876_3a86599a70_o.jpg
 d3.xml("data/8.svg", "image/svg+xml", function(xml) {
   geojson_arr[8] = {"path":xml.documentElement.childNodes[3].childNodes[1].attributes[0].nodeValue};
-  params[8]={'translate_x':960/2,'translate_y':20,'color':'blue'};
+  params[8]={'translate_x':960/2,'translate_y':20};
   if (++completed==nbSteps) {initTransition();}
 });
 
-// Ohio outline
+// Affected area (8-states) outline
 d3.json("data/9.json", function(error,json) {
   geojson_arr[9] = json.features[0].geometry;
-  params[9]={'color':'green'};
   if (++completed==nbSteps) {initTransition();}
 });
-
-// Affected area (8-states) outline
-d3.json("data/10.json", function(error,json) {
-  geojson_arr[10] = json.features[0].geometry;
-  params[10]={'color':'green'};
-  if (++completed==nbSteps) {initTransition();}
-});
-
-// USA outline
-// http://bl.ocks.org/mbostock/3081153
-d3.json("data/11.json", function(error,json) {
-  geojson_arr[11] = json.features[0].geometry;
-  params[11]={'color':'blue'};
-  if (++completed==nbSteps) {initTransition();}
-});
-
-// Affected area (8-states) outline
-d3.json("data/12.json", function(error,json) {
-  geojson_arr[12] = json.features[0].geometry;
-  params[12]={'color':'green'};
-  if (++completed==nbSteps) {initTransition();}
-});
-
 
 var initTransition = function(){
   var projection = d3.geo.albers()
@@ -221,8 +194,30 @@ var initTransition = function(){
     }
   }
 
+  // Orchestration of the animation based on loaded elements:
+  function orchestrate(){
+    var aniarr = new Array();
+
+    aniarr.push(darr[0]);
+    aniarr.push(darr[1]);
+    aniarr.push(darr[2]);
+    aniarr.push(darr[3]);
+    aniarr.push(darr[4]);
+    aniarr.push(darr[5]);
+    aniarr.push(darr[6]);
+    aniarr.push(darr[7]);
+    aniarr.push(darr[8]);
+    aniarr.push(darr[2]);
+    aniarr.push(darr[9]);
+    aniarr.push(darr[1]);
+    aniarr.push(darr[9]);
+    aniarr.push(darr[2]);
+
+    return aniarr;
+  }
+
   // Cloning the original array and initialising the 1st transition
-  var darr2 = darr.slice(0);
+  var darr2 = orchestrate();
   var d0 = darr2.shift();
   var d1 = darr2.shift();
 
@@ -242,12 +237,12 @@ var initTransition = function(){
           d0 = d1;
           if (!darr2.length)
           {
-            darr2 = darr.slice(0);
+            darr2 = orchestrate();
           }
           d1 = darr2.shift();
 
           // Delaying the next transition
-          //setTimeout(function(){
+          //d3.timer(function(){
             d3.select(this).call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(1-darr2.length/darr.length));
           //}, 2000);
         });
