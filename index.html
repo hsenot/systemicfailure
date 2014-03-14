@@ -29,6 +29,7 @@ var svg = d3.select("body").append("svg")
 
 var geojson_arr = [];
 var darr2;
+var started = false;
 //
 var generatedPath;
 var completed = 0;
@@ -323,12 +324,18 @@ var initTransition = function(){
         .call(transition, d0, d1, d3.interpolateLab("steelblue", "black")(0.));  
   }
 
-  startAnimation();
+  d3.select("body").on("keydown", function () {
+    if (!started)
+    {
+      startAnimation();
+      started = true;
+    }
+  });
 
   function transition(path, d0, d1, col) {
     path.transition()
         // Milliseconds for the animation to play out
-        .duration(4000)
+        .duration(3500)
         .style('fill', function(d) { return col; })
         // Precision of 1 is required to avoid a flash of corrected coordinates on loop end
         .attrTween("d", pathTween(d1, 4))
