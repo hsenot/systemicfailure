@@ -3,32 +3,38 @@ Elements of story-telling
 
 I'll be reporting on an "investigation of a systemic failure in a graph of blue hues".
 
+I have chosen this task out of interest for how people interact with systems. We design systems, that in return shape us. I was also interested to know if there were scientific foundations to the study of complex systems like power grids.
+
+And there is: "system theory" as part of a larger, emergent discipline called "complexity science".
+
+
 1) Context / definitions
 
-To describe a systemic failure, we need a system. As a broad starting point, a "system" is a group of elements organised into a cooperative manner.
+To describe a systemic failure, we need a system. As a starting point, we'll define a "system". A "system" is an organised group of elements that collectively perform a function.
 
 Some examples of systems are:
 * natural: the brain, immune systems, beehives, ecosystems, ..
 * designed: cities, electricity grids, the Internet, gardens .. 
-
-Complex adaptive systems:
 Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 42)
 
+* your own examples of systems: food systems, government, the economy, an industry, the healthcare system, ...
 
-A systemic failure, also known as cascading failure, results from an initially small problem within the system that propagates and preventes the system normal functioning and its ability to recover. The imagery associated with a systemic failure is that of cascading dominoes, or of the "butterfly effect".
+A system is an abstraction, and there are many ways to see the world through the "system" lense - it's called "system thinking".
 
-A couple of examples of systemic failures:
-- finance and interconnection of institutions: in finance, the collapse of a financial institution can plundge other institutions (and even whole economies) into a collapsing spiral.
+
+
+Now, a systemic failure, also known as cascading failure, results from an initially small problem within the system that propagates and compromises the system's normal functioning and its ability to recover. You can think of it as cascading dominoes.
+
+Examples of systemic failures:
+- in finance, the collapse of a financial institution can plundge other institutions (and even whole economies) into a collapsing spiral.
 - in an ecosystems, the extinction of a key species can lead to the extinction of a significant part of this ecosystem.
-- in agriculture, mono-culture systems relying on chemical pesticides can be annihilated by the emergence of a pest resistant to pesticides.
+- in an electricity grid, a localised failure - if unchecked - can propagate to connected power lines and cause cascading issues leading to entire regions loosing power: the blackout.
 
 
-
-The systemic failure we'll consider now is the electricity blackout that happened in North America in 2003.
+The systemic failure we'll investigate now is the electricity blackout that happened in North America in 2003.
 
 The system "electric grid" is composed of poles, wires, generators, operators, utilities, consumers, control processes, procedures and regulatory artefacts. It's widely acknowledged that the North American grid is one of the most complex system ever designed by humans.
 
-I'd like to attract your attention on detecting on actions or system modifications that could have prevented the sequence of events I am about to describe. The game is "how do you design a system that minimises the risk of systemic failure?" 
 
 
 2) Investigation => start the animation here
@@ -91,43 +97,50 @@ Effects and consequences
 * water supply
 * industry
 * transportation
-All subways and all trains in and out of NYC were stopped. An "all-diesel" barebone service was restored the day after. Passenger screening at regional airports ceased, so these airports were shut down too. In New York, flight operations were further delayed because of difficulties with the e-ticketing system. 
-Only one airport wasn't affected in the region - a former military base, it had its own generators.
-Air Canada flights remained grounded for an additional day due to improper power supply to its control towers.
+All subways and all trains in and out of NYC were stopped. An "all-diesel" barebone service was restored the day after. 
+Passenger screening at regional airports ceased, so these airports were shut down too. In New York, flight operations were further delayed because of difficulties with the e-ticketing system. Only one airport wasn't affected in the region - a former military base, it had its own generators.
 
-Many gas stations were unable to pump fuel. This compounded traffic problems as users drove their car until they ran out of petrol on the highway. Price at fuel stations sky-rocketted. Some oil refineries on the East Coast shut down, and resume operations slowly. This drove fuel prices up, and lead authorities to consider gasoline rationing.
+Many gas stations were unable to pump fuel. This compounded traffic problems as users drove their car until they ran out of petrol on the highway. Price at fuel stations sky-rocketted. Some oil refineries on the East Coast shut down, and resumed operations only slowly. This drove fuel prices up, and lead authorities to consider gasoline rationing.
 
 The border crossing near Detroit had a 7-hour wait due to the unavailability of the electronic border check systems.
 
 * communication
-Cell phone communication were disrupted, especially after mobile phone towers backup power ran out of fuel. Wired phone lines continued to work. New Yorkers were lining up 10 deep or more at pay phones. Radio stations were knocked off air, but were quickly back on air with backup power. Internet access was unavailable, except for dial-up access modem from laptop computers (until their battery ran out of charge). Amateur radio operators were able to pass emergency communications during the blackout.
+Cell phone communication were disrupted. Mobile phone towers failed after their backup power ran out of fuel. Wired phone lines continued to work. New Yorkers were lining up 10 deep or more at pay phones.
+
+Internet access was unavailable, except for dial-up access modem from laptop computers, until their battery ran out of charge. Amateur radio operators were able to pass emergency communications during the blackout.
 
 
 4) Discussion:
-=> what do we get out of these discussions? is the subject material interesting / engaging enough?
-The idea that one can get examples from one's understanding / observation of the world, and that nature and man-made systems have characteristics that help understand each other.
 
+* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, make better decisions and build better systems tomorrow
 
-- systems/infrastructure interdependency and failure propagating between systems: 
+Interdependency and failure propagating between systems: 
 * water / power nexus,
 Desalination plant requires a large amount of power to function.
 Coal power plants require large amounts of water, and protection from bushfires.
 * petrol / food nexus,
-Not difficult to see that there will be food shortages if petrol becomes an issue, as our supply chain are petrol-reliant.
+Quite clear there will be food shortages if petrol becomes an issue, as our supply chain are reliant on gasoline.
 * communications negative feedback loop
 Communication prevented have led to additional accidents.
 
-* It's not about being doom-minded or pessimistic, but to understand the levels of risks of our systems, make better decisions and build better systems tomorrow
+
+How can we design a system that minimises the risk of systemic failure?
 
 - qualities of systems that are resistant / resilient to systemic failures
-=> distribution (geographic spread), decentralisation (of power/decision-making), (bio)diversity, redundancy (no one function is carried by a single node) - no single point of failure, simplicity / DIY (food systems)
+=> distribution (geographic spread), 
+=> decentralisation (of power/decision-making), 
+=> (bio)diversity, 
+=> redundancy (no one function is carried by a single node) - no single point of failure, 
+=> simplicity / DIY (food systems)
 
 
 Wrap-up: pointers for further research
 --------------------------------------
 
 Notion of science branches involved: 
-complexity science, based on systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, evolutionary bilogy, information theory, computational theory, biological emergence ...
+complexity science is an umbrella term for research involving a mix of systems theory, social networks, artificial life, evolutionary biology, artificial intelligence, evolutionary bilogy, information theory, computational theory, biological emergence ...
+
+In an world increasing in complexity, complexity theory is a way to abstract and make sense, and draw parallels between systems, to expand our understanding.
 
 6 defining notions in complexity theory/science:
 - sensitivity to initial conditions (butterfly effect)
@@ -139,8 +152,6 @@ complexity science, based on systems theory, social networks, artificial life, e
 Source: Michael C. Jackson, System Thinking: Creative Holims for Managers
 via http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 45)
 
-Complexity theory: it's about the dynamics of change in a system
-Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 51)
 
-The activity of abstracting is basically a form of interaction between people in which they simplify the complexity of their own ordinary, everyday interactions in an effort to make meaning out of what they are doing. Ralph Stacey
-Source: http://www.slideshare.net/jurgenappelo/complexity-thinking (slide 15)
+
+
